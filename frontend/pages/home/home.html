@@ -1,0 +1,99 @@
+<navbar></navbar>
+
+<div class="container-md">
+    <h3>Sistema de facturación</h3>
+    <hr/>
+
+    <div
+        class="alert {{ alert.class }} alert-dismissible fade show"
+        role="alert" ng-if="alert.showAlert">
+        {{ alert.content }}
+        <button
+            type="button" class="close"
+            data-dismiss="alert"
+            ng-click="alert.showAlert = false">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <h5 class="text-danger" ng-if="facturaAnulada">Factura anulada</h5>
+
+    <div class="parent">
+        <div class="item data pt-2 px-3">
+            <h5 class="mt-1 mb-2">Nº {{ factura.nro }}</h5>
+            <p class="m-0">Nro. Autorización:</p>
+            416301900218677
+        </div>
+        <form class="form item">
+            <div class="row m-0">
+                <div class="col-sm-12 col-md-6 px-2">
+                    <div class="input-group mb-3">
+                        <input
+                            type="text" class="form-control to-disable"
+                            placeholder="Nit" ng-model="factura.nit">
+                        <div class="input-group-append">
+                            <button
+                                class="btn btn-outline-secondary btn-light to-disable"
+                                type="button" ng-click="findClient()">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 px-2">
+                    <div class="input-group mb-3">
+                        <input
+                            type="text" class="form-control register-client"
+                            placeholder="Razón social"
+                            ng-model="factura.razonSocial" disabled>
+                        <div class="input-group-append">
+                            <button
+                                class="btn btn-outline-secondary btn-light register-client"
+                                type="button" ng-click="registerClient()"
+                                disabled>
+                                Registrar cliente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group px-2">
+                <textarea
+                    class="form-control to-disable"
+                    ng-model="factura.glosa"
+                    placeholder="Glosa">
+                </textarea>
+            </div>
+        </form>
+    </div>
+
+    <div class="parent-buttons my-3">
+        <div class="item add-product">
+            <products-list></products-list>
+        </div>
+        <div class="item action-btns">
+            <button
+                class="btn deep-purple accent-3 text-white to-disable mb-2"
+                ng-click="grabarFactura()">
+                <i class="fa fa-save mr-2"></i>
+                Grabar
+            </button>
+            <button
+                class="btn deep-purple accent-3 text-white to-enable mb-2"
+                disabled ng-click="printFactura()">
+                <i class="fa fa-print mr-2"></i>
+                Imprimir
+            </button>
+            <button
+                class="btn red darken-2 text-white to-enable mb-2"
+                disabled ng-click="anularFactura()">
+                <i class="fa fa-close mr-2"></i>
+                Anular factura
+            </button>
+        </div>
+    </div>
+
+    <products-detail></products-detail>
+
+</div>

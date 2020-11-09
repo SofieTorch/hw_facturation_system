@@ -1,0 +1,64 @@
+
+.form {
+    width: 100%;
+    grid-area: form;
+    justify-self: left;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-areas: "data form form form";
+}
+
+.data {
+    grid-area: data;
+    border-style: solid;
+    border-color: rgb(172, 172, 172);
+    border-width: 0.7px;
+    border-radius: 16px;
+}
+
+.parent-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-areas: "add-product action-btns action-btns action-btns";
+}
+
+.action-btns {
+    grid-area: action-btns;
+    justify-self: right;
+}
+
+.add-product {
+    grid-area: add-product;
+}
+
+@media (max-width: 720px) {
+    .parent {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "data"                                                          
+                             "form";
+    }
+}
+
+@media (max-width: 510px) {
+    .parent-buttons{
+        grid-template-columns: 1fr;
+        grid-template-areas: "add-product"
+                             "action-btns";
+    }
+
+    .action-btns {
+        justify-self: left;
+    }
+}
+
+

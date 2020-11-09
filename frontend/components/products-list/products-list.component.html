@@ -1,0 +1,69 @@
+<button
+    type="button"
+    class="btn cyan lighten-1 text-white to-disable"
+    data-toggle="modal"
+    data-target="#modal">
+    Agregar producto
+</button>
+
+<div
+    class="modal fade" id="modal"
+    data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5
+                class="modal-title"
+                id="staticBackdropLabel">
+                Lista de productos
+            </h5>
+        </div>
+        <div class="modal-body">
+            
+            <table class="table table-hover">
+                <thead>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Precio unitario</th>
+                </thead>
+                <tbody>
+                    <tr
+                        ng-repeat="product in products"
+                        ng-click="selectProduct($index)"
+                        role="button">
+                        <td>{{ product.codigo }}</td>
+                        <td>{{ product.producto }}</td>
+                        <td>{{ product.marca }}</td>
+                        <td>{{ product.precioUnitario }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group mb-3">
+                <label for="cantidad">Cantidad</label>
+                <input
+                    id="cantidad" type="number"
+                    ng-model="product.cantidad" ng-change="verifyState()"
+                    class="form-control" placeholder="Cantidad">
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button
+                type="button" class="btn btn-outline-secondary"
+                data-dismiss="modal" ng-click="clearProduct()">
+                Cerrar
+            </button>
+            <button
+                id="productSubmit" type="button"
+                class="btn deep-purple accent-3 text-white"
+                disabled ng-click="addProduct()">
+                Agregar
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+

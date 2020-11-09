@@ -1,0 +1,26 @@
+
+<table class="table-bordered">
+    <thead ng-if="products.length > 0">
+        <th>Producto</th>
+        <th>Marca</th>
+        <th>Cantidad</th>
+        <th>Precio unitario</th>
+        <th>Subtotal</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in products">
+            <td>{{ product.producto }}</td>
+            <td>{{ product.marca }}</td>
+            <td>{{ product.cantidad }}</td>
+            <td>Bs.{{ product.precioUnitario }}</td>
+            <td>Bs.{{ product.subtotal }}</td>
+            <td class="text-center">
+                <button
+                    class="btn btn-outline-danger to-disable"
+                    ng-click="removeProduct($index)">
+                    Quitar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
