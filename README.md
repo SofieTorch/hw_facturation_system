@@ -1,6 +1,6 @@
 # Practice - AngularJS - Express - jsPDF
 ## About
-This project is my test for the university, so here it is. We had to do a facturation system, it's simple, but it was interesting.  
+This project is my test for the university, so here it is. We had to do a facturation system, it's simple, but it was so interesting :)  
 
 I'm using AngularJS for the frontend, Express for the backend, Bootstrap and Materialize for the styles, FontAwesome for the icons and, finally, jsPDF for print the invoices.
 
