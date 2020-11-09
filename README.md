@@ -1,4 +1,4 @@
-# Practice - AngularJS - Express - jsPDF
+# Practice - Facturation System
 ## About
 This project is my test for the university, so here it is. We had to do a facturation system, it's simple, but it was so interesting :)  
 
