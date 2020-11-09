@@ -7,6 +7,7 @@ I'm using AngularJS for the frontend, Express for the backend, Bootstrap and Mat
 ## How to run this project
 * Clone this repo and go to the path in your terminal (you'll need nodejs installed)
 * Then, run `npm install`. This will install all the dependencies for the project.
+* Create the directory `static/facturas`. Otherwise the invoices won't be saved.
 * Finally, run `npm run dev` and open your browser in **localhost, port 3000**.
     * You can also run `nodemon server/main.js` or `node server/main.js` if you prefer.
 
